@@ -47,13 +47,22 @@ function getPokemon(nameOrNumber) {
     });
 }
 
-// Show the first 12 Pokémon
-function showFirstTwelve() {
+// Show 12 random Pokémon (numbers 1-151, no repeats)
+function showRandomTwelve() {
   grid.innerHTML = "";
   message.innerText = "";
-  for (let i = 1; i <= 12; i++) {
-    getPokemon(i);
+
+  const numbers = [];
+  while (numbers.length < 12) {
+    const number = Math.floor(Math.random() * 151) + 1;
+    if (!numbers.includes(number)) {
+      numbers.push(number);
+    }
   }
+
+  numbers.forEach(function (number) {
+    getPokemon(number);
+  });
 }
 
 // Search for one Pokémon
@@ -69,7 +78,7 @@ function search() {
 
 // Click events
 searchButton.addEventListener("click", search);
-showAllButton.addEventListener("click", showFirstTwelve);
+randomButton.addEventListener("click", showRandomTwelve);
 
 // Pressing Enter also searches
 searchInput.addEventListener("keyup", function (event) {
@@ -98,4 +107,4 @@ anime({
   duration: 1000
 });
 
-showFirstTwelve();
+showRandomTwelve();
