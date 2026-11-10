@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>Pokédex</h1>
+      <div class="search-bar">
+        <input id="search-input" type="text" placeholder="Name or number (e.g. pikachu or 25)">
+        <button id="search-button">Search</button>
+        <button id="random-button">Random 12</button>
+      </div>
+      <p class="message"></p>
+    </header>
+
+    <main class="pokemon-grid"></main>
+
+    <!-- anime.js animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f8;
+  color: #222;
+}
+
+/* ---------- Header (flexbox) ---------- */
+.header {
+  background-color: #d33b3b;
+  color: #fff;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 48px;
+  letter-spacing: 2px;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-bar input {
+  padding: 10px 14px;
+  font-size: 16px;
+  width: 280px;
+  max-width: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+.search-bar button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hover and active states */
+.search-bar button:hover {
+  background-color: #444;
+}
+.search-bar button:active {
+  background-color: #000;
+  transform: scale(0.95);
+}
+
+.message {
+  margin: 0;
+  min-height: 20px;
+  font-weight: bold;
+}
+
+/* ---------- Card grid (CSS grid) ---------- */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  /* "translate" and "scale" are used instead of "transform" because
+     anime.js sets an inline transform on the cards while animating them */
+  transition: translate 0.2s, scale 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  translate: 0 -6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card:active {
+  scale: 0.97;
+}
+
+.card img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.card h2 {
+  margin: 8px 0 4px;
+  text-transform: capitalize;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
