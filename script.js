@@ -2,7 +2,7 @@
 const grid = document.querySelector(".pokemon-grid");
 const searchInput = document.querySelector("#search-input");
 const searchButton = document.querySelector("#search-button");
-const showAllButton = document.querySelector("#random-button");
+const randomButton = document.querySelector("#random-button");
 const message = document.querySelector(".message");
 
 const API_URL = "https://pokeapi.co/api/v2/pokemon/";
